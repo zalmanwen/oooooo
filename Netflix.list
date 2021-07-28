@@ -1,4 +1,4 @@
-# > Netflix
+# Netflix
 USER-AGENT,Argo*,Netflix
 DOMAIN-SUFFIX,netflix.com,Netflix
 DOMAIN-SUFFIX,netflix.net,Netflix
