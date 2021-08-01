@@ -806,7 +806,7 @@ DOMAIN,mobads.baidu.com,REJECT
 DOMAIN,mobads-logs.baidu.com,REJECT
 DOMAIN,nadvideo2.baidu.com,REJECT
 DOMAIN,nsclick.baidu.com,REJECT
-DOMAIN,hm.baidu.com,REJECT
+# DOMAIN,hm.baidu.com,REJECT
 DOMAIN,hmma.baidu.com,REJECT
 
 # > iQIYI
