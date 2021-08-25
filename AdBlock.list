@@ -771,6 +771,8 @@ DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
 DOMAIN-SUFFIX,ads.internal.unity3d.com,REJECT
 DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,REJECT
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
+DOMAIN,news-edge.apple.com,REJECT
+DOMAIN,news-events.apple.com,REJECT
 
 # --- (Alibaba) ---
 DOMAIN,tunion-api.m.taobao.com,REJECT
