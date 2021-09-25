@@ -1,5 +1,5 @@
 {
- "name": "W37fhy_diy gallery",
+ "name": "Aoo",
  "description": "自用除京东以外的Task脚本",
  "task": [
     "35 0 * * * https://raw.githubusercontent.com/zalmanwen/oooooo/master/eee/jd_redPacket.js, tag=京东全民开红包, img-url=https://raw.githubusercontent.com/zalmanwen/oooooo/master/eeee/jd_redPacket.png,enabled=true",
