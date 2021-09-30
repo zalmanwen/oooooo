@@ -463,5 +463,7 @@ DOMAIN-SUFFIX,zhimg.com,DIRECT
 DOMAIN-SUFFIX,zhuihd.com,DIRECT
 DOMAIN-SUFFIX,latev8.com,DIRECT
 
+DOMAIN-SUFFIX,sony.com.cn,DIRECT
+
 DOMAIN,download.jetbrains.com,DIRECT
 DOMAIN,images-cn.ssl-images-amazon.com,DIRECT
