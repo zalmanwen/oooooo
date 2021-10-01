@@ -808,8 +808,11 @@ DOMAIN,mobads.baidu.com,REJECT
 DOMAIN,mobads-logs.baidu.com,REJECT
 DOMAIN,nadvideo2.baidu.com,REJECT
 DOMAIN,nsclick.baidu.com,REJECT
-# DOMAIN,hm.baidu.com,REJECT
+DOMAIN,hm.baidu.com,REJECT
 DOMAIN,hmma.baidu.com,REJECT
+
+IP-CIDR,180.76.76.200/32,REJECT
+HOST,im.tieba.baidu.com,REJECT
 
 # > iQIYI
 DOMAIN,t7z.cupid.iqiyi.com,REJECT
