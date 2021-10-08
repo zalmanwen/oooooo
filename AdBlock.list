@@ -412,6 +412,7 @@ DOMAIN-SUFFIX,u-ad.info,REJECT
 DOMAIN-SUFFIX,uberads.com,REJECT
 DOMAIN-SUFFIX,uimserv.net,REJECT
 DOMAIN-SUFFIX,ultraadserver.com,REJECT
+DOMAIN-SUFFIX,ulogs.umeng.com,REJECT
 DOMAIN-SUFFIX,undertone.com,REJECT
 DOMAIN-SUFFIX,unimhk.com,REJECT
 DOMAIN-SUFFIX,unrulymedia.com,REJECT
