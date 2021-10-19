@@ -20,6 +20,9 @@ DOMAIN,news-assets.apple.com,PROXY
 DOMAIN,news-client.apple.com,PROXY
 DOMAIN,apple.comscoreresearch.com,PROXY
 
+HOST,lookup-api.apple.com.edgekey.net,PROXY
+HOST,e16991.b.akamaiedge.net,PROXY
+
 # > Crypto
 DOMAIN-SUFFIX,aex.com,PROXY
 DOMAIN-SUFFIX,bibox.com,PROXY
