@@ -138,13 +138,15 @@ async function cfd() {
 
     // 寻宝
     console.log(`寻宝`)
-    let XBDetail = beginInfo.XbStatus.XBDetail.filter((x) => x.dwRemainCnt !== 0 && x.dwRemainCnt !== 2)
+    let XBDetail = beginInfo.XbStatus.XBDetail.filter((x) => x.dwRemainCnt !== 0)
     if (XBDetail.length !== 0) {
       console.log(`开始寻宝`)
+      $.break = false
       for (let key of Object.keys(XBDetail)) {
         let vo = XBDetail[key]
         await $.wait(2000)
         await TreasureHunt(vo.strIndex)
+        if ($.break) break
       }
     } else {
       console.log(`暂无宝物`)
@@ -305,6 +307,7 @@ function TreasureHunt(strIndex) {
             }
           } else {
             console.log(`寻宝失败：${data.sErrMsg}`)
+            $.break = true
           }
         }
       } catch (e) {
@@ -1275,7 +1278,7 @@ function getUserInfo(showInvite = true) {
             console.log(`财富岛好友互助码每次运行都变化,旧的当天有效`);
             console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${strMyShareId}`);
             $.shareCodes.push(strMyShareId)
-            await uploadShareCode(strMyShareId, $.UserName)
+            await uploadShareCode(strMyShareId)
           }
           $.info = {
             ...$.info,
@@ -1636,7 +1639,7 @@ function showMsg() {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http://transfer.nz.lu/cfd`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://${randomString(40)}.transfer.nz.lu/cfd`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
@@ -1657,9 +1660,9 @@ function readShareCode() {
     resolve()
   })
 }
-function uploadShareCode(code, pin) {
+function uploadShareCode(code) {
   return new Promise(async resolve => {
-    $.post({url: `http://transfer.nz.lu/upload/cfd?code=${code}&ptpin=${encodeURIComponent(encodeURIComponent(pin))}`, timeout: 10000}, (err, resp, data) => {
+    $.post({url: `http://${randomString(40)}.transfer.nz.lu/upload/cfd?code=${code}&ptpin=${encodeURIComponent(encodeURIComponent($.UserName))}`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
