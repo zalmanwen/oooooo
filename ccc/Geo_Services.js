@@ -1,6 +1,3 @@
-/*
-README:https://github.com/VirgilClyne/iRingo
-*/
 
 const url = $request.url;
 var body = $response.body;
