@@ -1,0 +1,19 @@
+
+# Apple News 
+USER-AGENT,AppleNews*,Applenews
+DOMAIN,news-assets.apple.com,Applenews
+DOMAIN,news-client.apple.com,Applenews
+DOMAIN,news-edge.apple.com,Applenews
+DOMAIN,news-events.apple.com,Applenews
+DOMAIN,apple.comscoreresearch.com,Applenews
+DOMAIN,lookup-api.apple.com,Applenews
+DOMAIN,lookup-api.apple.com.edgekey.net,Applenews
+DOMAIN,e16991.b.akamaiedge.net,Applenews
+
+# Apple TV
+DOMAIN,linear.tv.apple.com,Applenews
+DOMAIN,play-edge.itunes.apple.com,Applenews
+
+# com.apple.geod
+USER-AGENT,geod*
+USER-AGENT,com.apple.geod*
