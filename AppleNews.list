@@ -15,5 +15,5 @@ DOMAIN,linear.tv.apple.com,Applenews
 DOMAIN,play-edge.itunes.apple.com,Applenews
 
 # com.apple.geod
-USER-AGENT,geod*
-USER-AGENT,com.apple.geod*
+USER-AGENT,geod*,Applenews
+USER-AGENT,com.apple.geod*,Applenews
