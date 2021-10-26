@@ -9,23 +9,6 @@ DOMAIN,s3-ap-southeast-2.amazonaws.com,PROXY
 DOMAIN,a248.e.akamai.net,PROXY
 DOMAIN,a771.dscq.akamai.net,PROXY
 
-# Applenews
-PROCESS-NAME,News,PROXY
-USER-AGENT,AppleNews*,PROXY
-USER-AGENT,News*,PROXY
-USER-AGENT,com.apple.news*,PROXY
-DOMAIN-SUFFIX,apple.news,PROXY
-DOMAIN,gspe1-ssl.ls.apple.com,PROXY
-DOMAIN,news-assets.apple.com,PROXY
-DOMAIN,news-client.apple.com,PROXY
-DOMAIN,apple.comscoreresearch.com,PROXY
-
-PROCESS-NAME,LookupViewService,PROXY
-PROCESS-NAME,/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/XPCServices/LookupViewService.xpc/Contents/MacOS/LookupViewService,PROXY
-DOMAIN,lookup-api.apple.com,PROXY
-DOMAIN,lookup-api.apple.com.edgekey.net,PROXY
-DOMAIN,e16991.b.akamaiedge.net,PROXY
-
 # > Crypto
 DOMAIN-SUFFIX,aex.com,PROXY
 DOMAIN-SUFFIX,bibox.com,PROXY
@@ -256,10 +239,6 @@ DOMAIN,d27xxe7juh1us6.cloudfront.net,PROXY
 # DOMAIN,www.amazon.com,PROXY
 DOMAIN-KEYWORD,avoddashs,PROXY
 
-# > Apple TV
-DOMAIN,linear.tv.apple.com,PROXY
-DOMAIN,play-edge.itunes.apple.com,PROXY
-
 # > Bahamut
 USER-AGENT,Anime*,PROXY
 DOMAIN-SUFFIX,bahamut.com.tw,PROXY
@@ -464,18 +443,6 @@ DOMAIN-SUFFIX,pornhubpremium.com,PROXY
 USER-AGENT,TaiwanGood*,PROXY
 DOMAIN-SUFFIX,skyking.com.tw,PROXY
 DOMAIN,hamifans.emome.net,PROXY
-
-# > TikTok
-USER-AGENT,TikTok*,PROXY
-DOMAIN-SUFFIX,byteoversea.com,PROXY
-DOMAIN-SUFFIX,ibytedtos.com,PROXY
-DOMAIN-SUFFIX,muscdn.com,PROXY
-DOMAIN-SUFFIX,musical.ly,PROXY
-DOMAIN-SUFFIX,tiktok.com,PROXY
-DOMAIN-SUFFIX,tik-tokapi.com,PROXY
-DOMAIN-SUFFIX,tiktokcdn.com,PROXY
-DOMAIN-SUFFIX,tiktokv.com,PROXY
-DOMAIN-KEYWORD,-tiktokcdn-com,PROXY
 
 # > TVer
 USER-AGENT,TVer-Release*,PROXY
