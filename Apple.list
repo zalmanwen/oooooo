@@ -9,7 +9,6 @@ HOST-SUFFIX,apple-icloud.cn,Apple
 HOST-SUFFIX,apple-livephotoskit.com,Apple
 HOST-SUFFIX,apple-mapkit.com,Apple
 HOST-SUFFIX,apple.co,Apple
-HOST-SUFFIX,apple.com,Apple
 HOST-SUFFIX,apple.com.cdn20.com,Apple
 HOST-SUFFIX,apple.com.cn,Apple
 HOST-SUFFIX,apple.com.mwcloudcdn.com,Apple
@@ -58,7 +57,6 @@ HOST-SUFFIX,wwwicloud.com,Apple
 HOST-KEYWORD,apple.com.akadns.net,Apple
 HOST-KEYWORD,icoudo,Apple
 HOST-KEYWORD,icoudos,Apple
-HOST-KEYWORD,testflight,Apple
 USER-AGENT,%E5%9C%B0%E5%9B%BE*,Apple
 USER-AGENT,%E6%9F%A5%E6%89%BE*,Apple
 USER-AGENT,%E8%AE%BE%E7%BD%AE*,Apple
@@ -70,7 +68,6 @@ USER-AGENT,FMFD*,Apple
 USER-AGENT,FindMy*,Apple
 USER-AGENT,Maps*,Apple
 USER-AGENT,Music*,Apple
-USER-AGENT,TestFlight*,Apple
 USER-AGENT,com.apple.Maps,Apple
 USER-AGENT,com.apple.appstored*,Apple
 USER-AGENT,com.apple.trustd*,Apple
