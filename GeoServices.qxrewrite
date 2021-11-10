@@ -1,5 +1,5 @@
 
 # Redirect Geo Services to US
-^https?:\/\/gspe\d*-ssl\.ls\.apple\.com(/pep/gcc) url script-echo-response https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js
+^https?:\/\/gspe\d*-ssl\.ls\.apple\.com(/pep/gcc) url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/GeoServices.js
 
 hostname = gspe1-ssl.ls.apple.com
