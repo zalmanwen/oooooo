@@ -17,3 +17,9 @@ DOMAIN,play-edge.itunes.apple.com,Applenews
 # com.apple.geod
 USER-AGENT,geod*,Applenews
 USER-AGENT,com.apple.geod*,Applenews
+
+# > iCloud
+HOST-SUFFIX,gateway.icloud.com,Applenews
+
+# News+ Audio
+HOST-SUFFIX,news-assets.apple.com,Applenews
