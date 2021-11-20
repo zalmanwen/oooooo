@@ -1,5 +1,3 @@
-#!name= Enable Apple TV app
-#!desc=解锁TV app全功能：使用🇺🇸US「体育节目」和「儿童」页面，优先简体中文(zh-Hans)
 
 # Enable All TV app Tabs
 ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/configurations\?.* url script-response-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
@@ -22,4 +20,4 @@
 # TV Product View, no Redirect
 # ^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
 
-hostname = %APPEND% uts-api.itunes.apple.com
+hostname = uts-api.itunes.apple.com
