@@ -3,6 +3,6 @@
  "description": "自用京东脚本",
  "task": [
     "35 0 * * * https://raw.githubusercontent.com/zalmanwen/oooooo/master/eee/jd_redPacket.js, tag=京东全民开红包, img-url=https://raw.githubusercontent.com/zalmanwen/oooooo/master/eeee/jd_redPacket.png,enabled=true",
-	"15 0 * * * https://raw.githubusercontent.com/zalmanwen/oooooo/master/eee/neteasemusic.js, tag=网易云音乐, img-url=https://raw.githubusercontent.com/zalmanwen/oooooo/master/eeee/neteasemusic.png, enabled=true",
+    "15 0 * * * https://raw.githubusercontent.com/zalmanwen/oooooo/master/eee/neteasemusic.js, tag=网易云音乐, img-url=https://raw.githubusercontent.com/zalmanwen/oooooo/master/eeee/neteasemusic.png, enabled=true",
  ]
 }
