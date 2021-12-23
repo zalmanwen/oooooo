@@ -1,56 +1,11 @@
-#!name= Rewrite Apple Geo Services Country Code
-#!desc=Redirect Apple Geo Services Country Code.
-
-[URL Rewrite]
-# Redirect GeoServices
-(^https?:\/\/gspe\d*-ssl\.ls\.apple\.)(com|cn)(\/.*)(country_code=[A-Z]{2})(.*) $1$2$3country_code=HK$5 header
-
-[MITM]
-hostname = %APPEND% gspe35-ssl.ls.apple.com
 
 
 
-#!name= Location-Based Siri Suggestions for Spotlight & Look Up & Safari
-#!desc=All Function Location-Based Siri Suggestions(Siri建议) for Spotlight(聚焦搜索) & Look Up(查询) & Safari(Safari浏览器).
-
-[Rule]
-# > Look Up (查询, macOS, Wikipedia, Surge Enhance Mode enabled required)
-PROCESS-NAME,LookupViewService,PROXY
-PROCESS-NAME,/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/XPCServices/LookupViewService.xpc/Contents/MacOS/LookupViewService,PROXY
-DOMAIN,lookup-api.apple.com,PROXY
-DOMAIN,lookup-api.apple.com.edgekey.net,PROXY
-DOMAIN,e16991.b.akamaiedge.net,PROXY
-
-[URL Rewrite]
-# Redirect Siri Suggestions Service 
-# Bag (iOS/macOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/bag.*)(cc=[A-Z]{2})(.*) $1com$3cc=HK$5 header
-# General Spotlight & Look Up Search (iOS/macOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/search.*)(cc=[A-Z]{2})(.*) $1com$3cc=HK$5 header
-# General Info Card (macOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=[^kg][^tv][^movies])(.*) $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9 header
-# Siri Knowledge(Siri资料) Card (Spotlight@macOS & Siri@iOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=(?:kgcn|kg))(.*) $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9 header
-# Siri Knowledge(Siri资料) Card (Spotlight@iOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/search.*)(cardDomain=kg)(.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*) $1com$3$4$5card_locale=zh-Hans_CN$7cc=HK$9 header
-# tv Movies and TV Show Card (macOS)
-(^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=(?:tv|movies))(.*)(q=(?:tv|movies)%3A)(.*)(%2F)([a-z]{2}-[A-Z]{2})(.*) $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9$10$11$12zh-HK$14 header
-
-[MITM]
-hostname = %APPEND% -api-glb-usw2b.smoot.apple.com, *.smoot.apple.com, *.smoot.apple.cn, lookup-api.apple.com
+static=Emby, 香港节点, 美国节点, proxy, img-url=https://raw.githubusercontent.com/zalmanwen/oooooo/master/loo/Netflix.png
 
 
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=(?:tv|movies))(.*)(q=(?:tv|movies)%3A)(.*)(%2F)([a-z]{2}-[A-Z]{2})(.*) url 302 $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9$10$11$12zh-HK$14
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/search.*)(cardDomain=kg)(.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*) url 302 $1com$3$4$5card_locale=zh-Hans_CN$7cc=HK$9
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=kg)(.*) url 302 $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/card.*)(card_locale=[a-zA-z\-]{2,7}_[A-Z]{2})(.*)(cc=[A-Z]{2})(.*)(include=[^kg][^tv])(.*) url 302 $1com$3card_locale=zh-Hans_CN$5cc=HK$7$8$9
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/search.*)(cc=[A-Z]{2})(.*) url 302 $1com$3cc=HK$5
-# (^https?:\/\/api.*\.smoot\.apple\.)(com|cn)(\/bag.*)(cc=[A-Z]{2})(.*) url 302 $1com$3cc=HK$5
-
-
-
-
-
+# Emby
+https://raw.githubusercontent.com/zalmanwen/oooooo/master/emby.list, tag=Emby, force-policy=Emby, update-interval=86400, opt-parser=true, enabled=true
 
 
 
