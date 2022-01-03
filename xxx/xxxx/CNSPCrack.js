@@ -1,31 +1,3 @@
-/*
- *
- *
-脚本功能：雏鸟短视频解锁会员
-软件版本：1.1.4
-下载地址：https://shrtm.nu/cnsp
-脚本作者：Hausd0rff
-更新时间：2021.11.12
-脚本发布：https://t.me/yqc_123
-问题反馈：https://t.me/yqc_007
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-脚本说明：注册时填写邀请码：A2BVEF
-        可无限延长脚本的使用期限
-********************************
-
-[rewrite_local]
-
-# 雏鸟短视频解锁会员
-^https?:\/\/.+\.chuniao\..+\/app\/api\/.+ url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/CNSPCrack.js
-
-[mitm] 
-
-hostname = *.chuniao.*
-*
-*
-*/
-
 
 var hausd0rff = $request.headers;
 
