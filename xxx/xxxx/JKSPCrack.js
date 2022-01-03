@@ -1,32 +1,3 @@
-/*
- *
- *
-脚本功能：健康视频解锁会员
-网页版本：3.18.4
-网站地址：https://shrtm.nu/jksp
-脚本作者：Hausd0rff
-更新时间：2021.11.14
-电报频道：https://t.me/yqc_123
-问题反馈：https://t.me/yqc_007
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-脚本说明：在“兑换VIP天数”里输入VIP兑换码
-        JK7939611可无限延长脚本使用期限
-
-************************************
-
-[rewrite_local]
-
-# 健康视频解锁会员
-^https?:\/\/apiw\.9waquan\.com\/sw2\/.+ url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/JKSPCrack.js
-
-[mitm] 
-
-hostname = apiw.9waquan.com
-*
-*
-*/
-
 
 var hausd0rff = $request.headers;
 
