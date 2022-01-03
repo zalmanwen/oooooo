@@ -1165,8 +1165,8 @@ HOST-SUFFIX,adsdk.vivo.com.cn,REJECT
 HOST-SUFFIX,adsstatic.vivo.com.cn,REJECT
 HOST-SUFFIX,adxlog.vivo.com.cn,REJECT
 HOST-SUFFIX,vcardsdkservice.vivo.com.cn,REJECT
-HOST-SUFFIX-KEYWORD,stsdk.vivo.com.cn,REJECT
-HOST-SUFFIX-KEYWORD,stsdk.vivoglobal.com,REJECT
+HOST-SUFFIX,stsdk.vivo.com.cn,REJECT
+HOST-SUFFIX,stsdk.vivoglobal.com,REJECT
 
 # > Viber
 HOST-SUFFIX,ads.viber.com,REJECT
