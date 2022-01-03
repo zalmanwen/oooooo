@@ -1,31 +1,3 @@
-/*
- *
- *
-脚本功能：91视频解锁会员
-软件版本：5.1.1
-下载地址：https://shrtm.nu/bssp
-脚本作者：Hausd0rff
-更新时间：2021.11.18
-电报频道：https://t.me/yqc_123
-问题反馈：https://t.me/yqc_007
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-
-*******************************
-
-[rewrite_local]
-
-# 91视频解锁会员
-^https?:\/\/ap\w{1}\.(weilaixushi|orientlion|qdjdswkj|0954auto)\.com\/m_user\/info url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/91SPCrack.js
-^https?:\/\/.*\/common\/splash_config url reject-200
-
-[mitm] 
-
-hostname = app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, api.0954auto.com
-*
-*
-*/
-
 
 var body = $response.body;
     
