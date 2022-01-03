@@ -14,7 +14,7 @@
 ^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/favorites\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
 ^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/watchlist.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
 ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/favorites\/(add|remove).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-# ^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.jss
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.jss
 
 # Apple News
 ^https?:\/\/news-(edge|events)\.apple\.com(\/v1\/configs|\/analyticseventsv2\/async).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_News.js
