@@ -1,25 +1,11 @@
 
 # Apple News 
-USER-AGENT,AppleNews*,Applenews
-DOMAIN,news-assets.apple.com,Applenews
-DOMAIN,news-client.apple.com,Applenews
-DOMAIN,news-edge.apple.com,Applenews
-DOMAIN,news-events.apple.com,Applenews
-DOMAIN,apple.comscoreresearch.com,Applenews
-DOMAIN,lookup-api.apple.com,Applenews
-DOMAIN,lookup-api.apple.com.edgekey.net,Applenews
-DOMAIN,e16991.b.akamaiedge.net,Applenews
-
-# Apple TV
-DOMAIN,linear.tv.apple.com,Applenews
-DOMAIN,play-edge.itunes.apple.com,Applenews
-
-# com.apple.geod
-USER-AGENT,geod*,Applenews
-USER-AGENT,com.apple.geod*,Applenews
+HOST-SUFFIX,news-edge.apple.com,Applenews
+HOST-SUFFIX,news-events.apple.com,Applenews
+HOST-SUFFIX,apple.comscoreresearch.com,Applenews
 
 # > iCloud
 HOST-SUFFIX,gateway.icloud.com,Applenews
 
-# News+ Audio
+# News+ Audio
 HOST-SUFFIX,news-assets.apple.com,Applenews
