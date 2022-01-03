@@ -1,27 +1,27 @@
 
 # Siri Suggestions
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/bag\?(.*) url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri_Suggestions.js
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/search\?(.*) url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri_Suggestions.js
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri_Suggestions.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/bag\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/search\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
 
 # Apple TV 
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/configurations\?.* url script-response-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/canvases\/Roots\/(watchNow|tahoma_watchnow|movies|tv|sports|kids)\?.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/(movies|shows|sports|sporting-events).* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/shelves\/uts.col.UpNext.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/brands\?.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/playables.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/favorites\?.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/watchlist.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/favorites\/(add|remove).* url script-request-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/configurations\?.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/canvases\/Roots\/(watchNow|tahoma_watchnow|movies|tv|sports|kids)\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/(movies|shows|sports|sporting-events).* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/shelves\/uts.col.UpNext.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/brands\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/playables.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/favorites\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/watchlist.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/favorites\/(add|remove).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
+^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.jss
 
 # Apple News
-^https?:\/\/news-(edge|events)\.apple\.com(\/v1\/configs|\/analyticseventsv2\/async).* url script-request-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_News.js
-^https?:\/\/news-(client-search)\.apple\.com\/(v1\/search\?).* url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_News.js
+^https?:\/\/news-(edge|events)\.apple\.com(\/v1\/configs|\/analyticseventsv2\/async).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_News.js
+^https?:\/\/news-(client-search)\.apple\.com\/(v1\/search\?).* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_News.js
 
 # Geo Services
-^https?:\/\/gspe\d*-ssl\.ls\.apple\.com(/pep/gcc) url script-echo-response https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js
+^https?:\/\/gspe\d*-ssl\.ls\.apple\.com(/pep/gcc) url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Geo_Services.js
 
 
 hostname = -cdn*.smoot.apple.com, -fbs.smoot.apple.com, *.smoot.apple.com, *.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, gspe1-ssl.ls.apple.com
