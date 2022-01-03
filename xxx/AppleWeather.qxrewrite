@@ -1,4 +1,0 @@
-
-^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather.*(?!dataSets=forecastNextHour)(include=.*air_quality.*|dataSets=.*airQuality.*).*(country=[A-Z]{2})?.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/AppleWeather.js
-
-hostname = weather-data.apple.com
