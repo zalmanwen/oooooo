@@ -1,4 +1,0 @@
-
-^https?:\/\/(weather-data|weather-data-origin)\.apple\.com\/(v1|v2)\/weather.*(include=[a-z,_]{1,}|dataSets=[A-Za-z,]{1,}).*(country=[A-Z]{2})?.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/AppleWeather.js
-
-hostname = weather-data.apple.com
