@@ -1,30 +1,3 @@
-/*
- *
- *
-脚本功能：水蜜桃解锁会员
-软件版本：2.1.1
-下载地址：https://shrtm.nu/peach
-脚本作者：Hausd0rff
-更新时间：2021.11.12
-电报频道：https://t.me/yqc_123
-问题反馈：https://t.me/yqc_007
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-
-********************************
-
-[rewrite_local]
-
-# 水蜜桃解锁会员
-^http?:\/\/api\.mtaoapi006\.\w{3,4}:\d{4}\/api\.php\/api\/users\/getBaseInfo url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/PeachCrack.js
-
-[mitm] 
-
-hostname = api.mtaoapi006.*
-*
-*
-*/
-
 
 var obj = JSON.parse($response.body);
     
