@@ -1,5 +1,4 @@
 
-
 # 91视频解锁会员
 ^https?:\/\/ap\w{1}\.(weilaixushi|orientlion|qdjdswkj|0954auto)\.com\/m_user\/info url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/91SPCrack.js
 ^https?:\/\/.*\/common\/splash_config url reject-200
@@ -20,7 +19,9 @@
 # 水蜜桃解锁会员
 ^http?:\/\/api\.mtaoapi006\.\w{3,4}:\d{4}\/api\.php\/api\/users\/getBaseInfo url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/PeachCrack.js
 
+# > 鱿鱼视频解锁会员
+^https?:\/\/api\.youyu.*\/api\/account\/loginBy(Phone|Password)$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/YYSPCrack.js
 
-hostname = app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, api.0954auto.com, *.chuniao.*, apiw.9waquan.com, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.mtaoapi006.*
+hostname = app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, api.0954auto.com, *.chuniao.*, apiw.9waquan.com, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.mtaoapi006.*, api.youyu*
 
 
