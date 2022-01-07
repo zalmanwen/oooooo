@@ -1,5 +1,3 @@
-
-
 # > General
 
 HOST-SUFFIX,adservice,REJECT
@@ -1113,9 +1111,9 @@ HOST-SUFFIX,l.qq.com,REJECT
 HOST-SUFFIX,adsmind.apdcdn.tc.qq.com,REJECT
 HOST-SUFFIX,adsmind.gdtimg.com,REJECT
 HOST-SUFFIX,adsmind.tc.qq.com,REJECT
-HOST-SUFFIX,pgdt.gtimg.cn,REJECT
-HOST-SUFFIX,pgdt.gtimg.com,REJECT
-HOST-SUFFIX,pgdt.ugdtimg.com,REJECT
+# HOST-SUFFIX,pgdt.gtimg.cn,REJECT
+# HOST-SUFFIX,pgdt.gtimg.com,REJECT
+# HOST-SUFFIX,pgdt.ugdtimg.com,REJECT
 HOST-SUFFIX,splashqqlive.gtimg.com,REJECT
 HOST-SUFFIX,wa.gtimg.com,REJECT
 # HOST-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
