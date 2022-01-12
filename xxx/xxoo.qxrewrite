@@ -22,6 +22,9 @@
 # > 鱿鱼视频解锁会员
 ^https?:\/\/api\.youyu.*\/api\/account\/loginBy(Phone|Password)$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/YYSPCrack.js
 
-hostname = app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, api.0954auto.com, *.chuniao.*, apiw.9waquan.com, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.mtaoapi006.*, api.youyu*
+# > 69萝莉解锁会员
+^https?:\/\/h5\.502you\.me\/h5\/login\/loginAccount$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/xxx/xxxx/LLSPCrack.js
+
+hostname = app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, api.0954auto.com, *.chuniao.*, apiw.9waquan.com, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.mtaoapi006.*, api.youyu*, h5.502you.me
 
 
