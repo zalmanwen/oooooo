@@ -77,4 +77,38 @@ https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-bo
 # > TOK CAM
 ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/TokCamFProCrack.js
 
+# 去除动态中的话题
+^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr url reject-dict
+
+# 去除动态中的最常访问
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist url reject-dict
+
+# 可能的一些推广(beta)
+^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? url reject-dict
+
+# 推荐去广告
+^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 追番去广告
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 直播去广告
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 动态去广告
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_(history|new)\? url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 开屏去广告
+^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/list url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 标签页处理
+^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 我的页面处理
+^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/bilibili_plus.js
+
+# 漫画去广告
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash url reject-dict
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash url reject-dict
+
 hostname = *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, *.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, mp.weixin.qq.com, mb3admin.com, www.mb3admin.com, vsco.co, api.revenuecat.com, api.m.jd.com, -*snssdk.com, -*amemv.com, api.picsart.c*, api.meiease.c*, m*.bybutter.com, api.polaxiong.com, pan.baidu.com, account.wps.cn, dayone.*, trade-acs.m.taobao.com, music.163.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com, photos.adobe.io, ms.jr.jd.com, me-api.jd.com, m.jingxi.com, app.bilibili.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, testflight.apple.com, spclient.wg.spotify.com, *.baidu.com, afd.baidu.com, boxer.baidu.com, account.huami.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, buy.itunes.apple.com, api.revenuecat.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.account.meitu.com, api.meiyan.com, api.meiease.cn, yimuapp.com
