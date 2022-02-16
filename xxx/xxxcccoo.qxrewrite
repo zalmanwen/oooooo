@@ -71,4 +71,10 @@ https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-bo
 # > 一木记账
 ^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/YiMuJiZhang.js
 
+# > OldRoll
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/OldRollFVIPCrack.js
+
+# > TOK CAM
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/TokCamFProCrack.js
+
 hostname = *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, *.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, mp.weixin.qq.com, mb3admin.com, www.mb3admin.com, vsco.co, api.revenuecat.com, api.m.jd.com, -*snssdk.com, -*amemv.com, api.picsart.c*, api.meiease.c*, m*.bybutter.com, api.polaxiong.com, pan.baidu.com, account.wps.cn, dayone.*, trade-acs.m.taobao.com, music.163.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com, photos.adobe.io, ms.jr.jd.com, me-api.jd.com, m.jingxi.com, app.bilibili.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, testflight.apple.com, spclient.wg.spotify.com, *.baidu.com, afd.baidu.com, boxer.baidu.com, account.huami.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, buy.itunes.apple.com, api.revenuecat.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.account.meitu.com, api.meiyan.com, api.meiease.cn, yimuapp.com
