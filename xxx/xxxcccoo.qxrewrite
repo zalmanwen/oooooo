@@ -24,7 +24,7 @@
 ^https?:\/\/m(p|ini-hk)\.bybutter\.com\/mood\/(official-templates|privileges) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/NiChi.js
 
 # PicsArt
-^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/PicsArt.js
+^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/Picsart.js
 
 # Picsew
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/Picsew.js
@@ -51,7 +51,24 @@ https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-bo
 ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/wb_launch.js
 ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/wb_ad.js
 
-# spotify解锁
+# spotify
 ^https\:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/spotify-proto.js
 
-hostname = *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, *.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, mp.weixin.qq.com, mb3admin.com, www.mb3admin.com, vsco.co, api.revenuecat.com, api.m.jd.com, -*snssdk.com, -*amemv.com, api.picsart.c*, api.meiease.c*, m*.bybutter.com, api.polaxiong.com, pan.baidu.com, account.wps.cn, dayone.*, trade-acs.m.taobao.com, music.163.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com, photos.adobe.io, ms.jr.jd.com, me-api.jd.com, m.jingxi.com, app.bilibili.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, testflight.apple.com, spclient.wg.spotify.com, *.baidu.com, afd.baidu.com, boxer.baidu.com, account.huami.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, buy.itunes.apple.com
+# > Aphrodite
+^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/(\$RCAnonymousID\%)?(\w)+$ url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/Aphrodite.js
+^https?:\/\/api\.revenuecat\.com\/v\d\/receipts$ url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/Aphrodite.js
+
+# > 美图秀秀
+^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/MeiTuXiuXiu.js
+
+# > 美颜相机
+^https?:\/\/api\.account\.meitu\.com\/(common\/check_device_login_pwd|users\/show_current\.json) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/MeiYanXiangJi.js
+^https?:\/\/api\.meiyan\.com\/vip\/(user_center\.json|user_info\.json) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/MeiYanXiangJi.js
+
+# > TextEditor
+^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/TextEditor.js
+
+# > 一木记账
+^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/YiMuJiZhang.js
+
+hostname = *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, *.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, mp.weixin.qq.com, mb3admin.com, www.mb3admin.com, vsco.co, api.revenuecat.com, api.m.jd.com, -*snssdk.com, -*amemv.com, api.picsart.c*, api.meiease.c*, m*.bybutter.com, api.polaxiong.com, pan.baidu.com, account.wps.cn, dayone.*, trade-acs.m.taobao.com, music.163.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com, photos.adobe.io, ms.jr.jd.com, me-api.jd.com, m.jingxi.com, app.bilibili.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, testflight.apple.com, spclient.wg.spotify.com, *.baidu.com, afd.baidu.com, boxer.baidu.com, account.huami.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, buy.itunes.apple.com, api.revenuecat.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.account.meitu.com, api.meiyan.com, api.meiease.cn, yimuapp.com
