@@ -299,7 +299,6 @@ HOST-SUFFIX,hbomaxcdn.com,PROXY
 USER-AGENT,HBO%20GO%20PROD*,PROXY
 HOST-SUFFIX,hbogoasia.com,PROXY
 HOST-SUFFIX,hbogoasia.hk,PROXY
-HOST-SUFFIX-KEYWORD,.hbogoasia.,PROXY
 HOST-SUFFIX,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,PROXY
 HOST-SUFFIX,bcbolthboa-a.akamaihd.net,PROXY
 HOST-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net,PROXY
