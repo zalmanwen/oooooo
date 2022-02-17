@@ -196,10 +196,6 @@ HOST-SUFFIX,soundcloud.com,PROXY
 USER-AGENT,TIDAL*,PROXY
 HOST-SUFFIX,tidal.com,PROXY
 
-# > YouTubeMusic
-USER-AGENT,com.google.ios.youtubemusic*,PROXY
-USER-AGENT,YouTubeMusic*,PROXY
-
 # (Podcast)
 # > Himalaya
 USER-AGENT,Himalaya*,PROXY
@@ -315,11 +311,6 @@ HOST-SUFFIX,hbounify-prod.evergent.com,PROXY
 HOST-SUFFIX,players.brightcove.net,PROXY
 HOST-SUFFIX,s3-ap-southeast-1.amazonaws.com,PROXY
 
-# > 华文电视
-USER-AGENT,HWTVMobile*,PROXY
-HOST-SUFFIX,5itv.tv,PROXY
-HOST-SUFFIX,ocnttv.com,PROXY
-
 # > Hulu
 HOST-SUFFIX,hulu.com,PROXY
 HOST-SUFFIX,huluim.com,PROXY
@@ -349,12 +340,6 @@ HOST-SUFFIX,d3c7rimkq79yfu.cloudfront.net,PROXY
 # > LiTV
 HOST-SUFFIX,litv.tv,PROXY
 HOST-SUFFIX,litvfreemobile-hichannel.cdn.hinet.net,PROXY
-
-# > My5
-USER-AGENT,My5*,PROXY
-HOST-SUFFIX,channel5.com,PROXY
-HOST-SUFFIX,my5.tv,PROXY
-HOST-SUFFIX,d349g9zuie06uo.cloudfront.net,PROXY
 
 # > Naver TV
 USER-AGENT,Naver%20TV*,PROXY
@@ -416,15 +401,6 @@ USER-AGENT,WeTV*,PROXY
 HOST-SUFFIX,wetv.vip,PROXY
 HOST-SUFFIX,wetvinfo.com,PROXY
 IP-CIDR,150.109.28.51/32,PROXY
-
-# > YouTube
-USER-AGENT,com.google.ios.youtube*,PROXY
-USER-AGENT,YouTube*,PROXY
-HOST-SUFFIX,googlevideo.com,PROXY
-HOST-SUFFIX,youtube.com,PROXY
-HOST-SUFFIX,ytimg.com,PROXY
-HOST-SUFFIX,youtubei.googleapis.com,PROXY
-HOST-SUFFIX,yt3.ggpht.com,PROXY
 
 # > Others
 HOST-SUFFIX,4shared.com,PROXY
