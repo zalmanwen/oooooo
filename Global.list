@@ -175,7 +175,7 @@ HOST-SUFFIX,dzcdn.net,PROXY
 USER-AGENT,JOOX*,PROXY
 USER-AGENT,WeMusic*,PROXY
 HOST-SUFFIX,joox.com,PROXY
-HOST-SUFFIX-KEYWORD,jooxweb-api,PROXY
+HOST-SUFFIX,jooxweb-api,PROXY
 
 # > KKBOX
 HOST-SUFFIX,kkbox.com,PROXY
@@ -216,7 +216,7 @@ HOST-SUFFIX,abema.io,PROXY
 HOST-SUFFIX,abema.tv,PROXY
 HOST-SUFFIX,ameba.jp,PROXY
 HOST-SUFFIX,hayabusa.io,PROXY
-HOST-SUFFIX-KEYWORD,abematv.akamaized.net,PROXY
+HOST-SUFFIX,abematv.akamaized.net,PROXY
 
 # > All 4
 USER-AGENT,All4*,PROXY
@@ -241,7 +241,7 @@ HOST-SUFFIX,d22qjgkvxw22r6.cloudfront.net,PROXY
 HOST-SUFFIX,d1v5ir2lpwr8os.cloudfront.net,PROXY
 HOST-SUFFIX,d27xxe7juh1us6.cloudfront.net,PROXY
 # HOST-SUFFIX,www.amazon.com,PROXY
-HOST-SUFFIX-KEYWORD,avoddashs,PROXY
+HOST-SUFFIX,avoddashs,PROXY
 
 # > Bahamut
 USER-AGENT,Anime*,PROXY
@@ -254,8 +254,8 @@ HOST-SUFFIX,gamer2-cds.cdn.hinet.net,PROXY
 USER-AGENT,BBCiPlayer*,PROXY
 HOST-SUFFIX,bbc.co.uk,PROXY
 HOST-SUFFIX,bbci.co.uk,PROXY
-HOST-SUFFIX-KEYWORD,bbcfmt,PROXY
-HOST-SUFFIX-KEYWORD,uk-live,PROXY
+HOST-SUFFIX,bbcfmt,PROXY
+HOST-SUFFIX,uk-live,PROXY
 
 # > DAZN
 USER-AGENT,DAZN*,PROXY
@@ -264,7 +264,7 @@ HOST-SUFFIX,dazn-api.com,PROXY
 HOST-SUFFIX,dazndn.com,PROXY
 HOST-SUFFIX,indazn.com,PROXY
 HOST-SUFFIX,d151l6v8er5bdm.cloudfront.net,PROXY
-HOST-SUFFIX-KEYWORD,voddazn,PROXY
+HOST-SUFFIX,voddazn,PROXY
 
 # > discovery+
 USER-AGENT,DPlus*,PROXY
