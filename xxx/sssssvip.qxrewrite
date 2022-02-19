@@ -1,6 +1,6 @@
 
 # > AudioMack解锁永久订阅
-^https?:\/\/api\.revenuecat\.com\/v1\/subscribers\/(identify|\d+)$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/AudioMackProCrack.js
+^https?:\/\/api\.revenuecat\.com\/v1\/subscribers\/(identify|\d+)$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/AudioMackFProCrack.js
 
 # FIMO解锁终身会员
 ^https?:\/\/server\.yoyiapp\.com\/fimo-user\/apple\/certificate$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/FiMoCameraFVIPCrack.js
