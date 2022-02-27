@@ -1,42 +1,46 @@
 /*
     Dualsub for Quantumult X by Neurogram
  
-        - Disney+, Star+, HBO Max, Netflix bilingual subtitles
-        - Disney+, Star+, HBO Max Official subtitles support
-        - Disney+, Star+, HBO Max, Netflix Machine translation support (Google, DeepL)
+        - Disney+, Star+, HBO Max official bilingual subtitles
+        - Disney+, Star+, HBO Max, Netflix, Paramount+ external subtitles
+        - Disney+, Star+, HBO Max, Netflix, Paramount+ machine translation bilingual subtitles (Google, DeepL)
         - YouTube subtitles auto-translate
         - Customized language support
  
     Manual:
-        Setting tool for Shortcuts: https://www.icloud.com/shortcuts/136b52e6452b4a10b3ea647f925cddd0
+        Setting tool for Shortcuts: https://www.icloud.com/shortcuts/b7e3c6824af44ce3b4508018943f4237
 
         Quantumult X:
 
         [rewrite_local]
 
         // All in one
-        https:\/\/(.+media.(dss|star)ott|manifests.v2.api.hbo|.+hbomaxcdn|.+nflxvideo).(com|net)\/((.+(.vtt|-all-.+.m3u8.*))|hls.m3u8.+|\?o=\d+&v=\d+&e=.+) url script-response-body Dualsub.js
-        https:\/\/setting.(media.(dss|star)ott|hbomaxcdn|nflxvideo|youtube).(com|net)\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
-        http:\/\/www.youtube.com\/api\/timedtext.+ url script-request-header Dualsub.js
+        https:\/\/.*(media.(dss|star)ott|manifests.v2.api.hbo|hbomaxcdn|nflxvideo|cbs(aa|i)video).(com|net)\/((.+(\.vtt(\?m=\d+)*|-all-.+.m3u8.*))|hls.m3u8.+|\?o=\d+&v=\d+&e=.+) url script-response-body Dualsub.js
+        https:\/\/setting.(media.dssott|hbomaxcdn|nflxvideo|youtube|cbsivideo).(com|net)\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
+        https:\/\/www.youtube.com\/api\/timedtext.+ url script-request-header Dualsub.js
 
         // Disney+, Star+ individual
         https:\/\/.+media.(dss|star)ott.com\/ps01\/disney\/.+(\.vtt|-all-.+\.m3u8.*) url script-response-body Dualsub.js
-        https:\/\/.+media.(dss|star)ott.com\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
+        https:\/\/setting.media.dssott.com\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
  
-        // Disney+ HBO Max individual
-        https:\/\/(manifests.v2.api.hbo.com|.+hbomaxcdn.com)\/(hls.m3u8.+|video.+\.vtt$) url script-response-body Dualsub.js
+        // HBO Max individual
+        https:\/\/(manifests.v2.api.hbo.com|.+hbomaxcdn.com)\/(hls.m3u8.+|video.+\.vtt) url script-response-body Dualsub.js
         https:\/\/setting.hbomaxcdn.com\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
 
         // Netflix individual
         https:\/\/.+nflxvideo.net\/\?o=\d+&v=\d+&e=.+ url script-response-body Dualsub.js
-        https:\/\/.+nflxvideo.net\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
+        https:\/\/setting.nflxvideo.net\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
+
+        // Paramount+ individual
+        https:\/\/.+cbs(aa|i)video.com\/.+\.vtt(\?m=\d+)* url script-response-body Dualsub.js
+        https:\/\/setting.cbsivideo.com\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
 
         //YouTube individual
         https:\/\/setting.youtube.com\/\?action=(g|s)et url script-analyze-echo-response Dualsub.js
         https:\/\/www.youtube.com\/api\/timedtext.+ url script-request-header Dualsub.js
 
         [mitm]
-        hostname = *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.nflxvideo.net, *.youtube.com
+        hostname = *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.youtube.com
 
     Author:
         Telegram: Neurogram
@@ -46,11 +50,9 @@
 let url = $request.url
 let headers = $request.headers
 
-let settings = $prefs.valueForKey("settings")
-
-if (!settings) settings = {
+let default_settings = {
     Disney: {
-        type: "Official", // Official, Google, DeepL, Disable
+        type: "Official", // Official, Google, DeepL, External, Disable
         lang: "English [CC]",
         sl: "auto",
         tl: "English [CC]",
@@ -63,9 +65,10 @@ if (!settings) settings = {
         subtitles_sl: "null",
         subtitles_tl: "null",
         subtitles_line: "null",
+        external_subtitles: "null"
     },
     HBOMax: {
-        type: "Official", // Official, Google, DeepL, Disable
+        type: "Official", // Official, Google, DeepL, External, Disable
         lang: "English CC",
         sl: "auto",
         tl: "en-US SDH",
@@ -78,9 +81,10 @@ if (!settings) settings = {
         subtitles_sl: "null",
         subtitles_tl: "null",
         subtitles_line: "null",
+        external_subtitles: "null"
     },
     Netflix: {
-        type: "Google", // Google, DeepL, Disable
+        type: "Google", // Google, DeepL, External, Disable
         lang: "English",
         sl: "auto",
         tl: "en",
@@ -93,6 +97,23 @@ if (!settings) settings = {
         subtitles_sl: "null",
         subtitles_tl: "null",
         subtitles_line: "null",
+        external_subtitles: "null"
+    },
+    Paramount: {
+        type: "Google", // Google, DeepL, External, Disable
+        lang: "English",
+        sl: "auto",
+        tl: "en",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
     },
     YouTube: {
         type: "Enable", // Enable, Disable
@@ -102,24 +123,35 @@ if (!settings) settings = {
     }
 }
 
+let settings = $prefs.valueForKey("settings")
+
+if (!settings) settings = default_settings
+
 if (typeof (settings) == "string") settings = JSON.parse(settings)
 
 let service = ""
 if (url.match(/(dss|star)ott.com/)) service = "Disney"
 if (url.match(/hbo(maxcdn)*.com/)) service = "HBOMax"
 if (url.match(/nflxvideo.net/)) service = "Netflix"
+if (url.match(/cbs(aa|i)video.com/)) service = "Paramount"
 if (url.match(/youtube.com/)) service = "YouTube"
 
+if (!service) $done({})
+
+if (!settings[service]) settings[service] = default_settings[service]
 let setting = settings[service]
 
 if (url.match(/action=get/)) {
     delete setting.t_subtitles_url
     delete setting.subtitles
+    delete setting.external_subtitles
     $done({ status: "HTTP/1.1 200 OK", body: JSON.stringify(setting) })
 }
 
 if (url.match(/action=set/)) {
     let new_setting = JSON.parse($request.body)
+    if (new_setting.type != "External") settings[service].external_subtitles = "null"
+    if (new_setting.type == "Reset") new_setting = default_settings[service]
     if (new_setting.type) settings[service].type = new_setting.type
     if (new_setting.lang) settings[service].lang = new_setting.lang
     if (new_setting.sl) settings[service].sl = new_setting.sl
@@ -133,18 +165,18 @@ if (url.match(/action=set/)) {
     if (new_setting.subtitles_sl) settings[service].subtitles_sl = new_setting.subtitles_sl
     if (new_setting.subtitles_tl) settings[service].subtitles_tl = new_setting.subtitles_tl
     if (new_setting.subtitles_line) settings[service].subtitles_line = new_setting.subtitles_line
+    if (new_setting.external_subtitles) settings[service].external_subtitles = new_setting.external_subtitles.replace(/\r/g, "")
     $prefs.setValueForKey(JSON.stringify(settings), "settings")
     delete settings[service].t_subtitles_url
     delete settings[service].subtitles
+    delete settings[service].external_subtitles
     $done({ status: "HTTP/1.1 200 OK", body: JSON.stringify(settings[service]) })
 }
 
 if (service == "YouTube") {
     let patt = new RegExp(`lang=${setting.tl}`)
 
-    if (url.match(patt)) $done({})
-
-    if (url.match(/&tlang=/)) $done({})
+    if (url.match(patt) || url.match(/&tlang=/)) $done({})
 
     $done({ path: `${url.replace(/https:\/\/www.youtube.com/, "")}&tlang=${setting.tl == "zh-CN" ? "zh-Hans" : setting.tl == "zh-TW" ? "zh-Hant" : setting.tl}` })
 }
@@ -214,22 +246,33 @@ if (url.match(/\.vtt/) || service == "Netflix") {
     if (setting.type == "Google") machine_subtitles("Google")
 
     if (setting.type == "DeepL") machine_subtitles("DeepL")
+
+    if (setting.type == "External") external_subtitles()
+}
+
+function external_subtitles() {
+    let patt = new RegExp(`(\\d+\\n)*\\d+:\\d\\d:\\d\\d.\\d\\d\\d --> \\d+:\\d\\d:\\d\\d.\\d.+(\\n|.)+`)
+    if (!setting.external_subtitles.match(patt)) $done({})
+    if (!body.match(patt)) $done({})
+    let external = setting.external_subtitles.replace(/(\d+:\d\d:\d\d),(\d\d\d)/g, "$1.$2")
+    body = body.replace(patt, external.match(patt)[0])
+    $done({ body: body })
 }
 
 async function machine_subtitles(type) {
 
-    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d -->.+line.+\n.+)\n(.+)/g, "$1 $2")
-    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d -->.+line.+\n.+)\n(.+)/g, "$1 $2")
+    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n.+)\n(.+)/g, "$1 $2")
+    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n.+)\n(.+)/g, "$1 $2")
 
-    let dialogue = body.match(/\d+:\d\d:\d\d.\d\d\d -->.+line.+\n.+/g)
+    let dialogue = body.match(/\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n.+/g)
 
     if (!dialogue) $done({})
 
-    let timeline = body.match(/\d+:\d\d:\d\d.\d\d\d -->.+line.+/g)
+    let timeline = body.match(/\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+/g)
 
     let s_sentences = []
     for (var i in dialogue) {
-        s_sentences.push(`${type == "Google" ? "~" + i + "~" : "&text="}${dialogue[i].replace(/<\/*(c\.[^>]+|i)>/g, "").replace(/\d+:\d\d:\d\d.\d\d\d -->.+line.+\n/, "")}`)
+        s_sentences.push(`${type == "Google" ? "~" + i + "~" : "&text="}${dialogue[i].replace(/<\/*(c\.[^>]+|i)>/g, "").replace(/\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n/, "")}`)
     }
     s_sentences = groupAgain(s_sentences, type == "Google" ? 80 : 50)
 
@@ -333,10 +376,10 @@ async function official_subtitles(subtitles_urls_data) {
         result.push(await send_request(options))
     }
 
-    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d -->.+line.+\n.+)\n(.+)/g, "$1 $2")
-    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d -->.+line.+\n.+)\n(.+)/g, "$1 $2")
+    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n.+)\n(.+)/g, "$1 $2")
+    body = body.replace(/(\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n.+)\n(.+)/g, "$1 $2")
 
-    let timeline = body.match(/\d+:\d\d:\d\d.\d\d\d -->.+line.+/g)
+    let timeline = body.match(/\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+/g)
 
     for (var i in timeline) {
         let patt1 = new RegExp(`(${timeline[i]})`)
@@ -344,14 +387,14 @@ async function official_subtitles(subtitles_urls_data) {
 
         let time = timeline[i].match(/^\d+:\d\d:\d\d/)[0]
 
-        let patt2 = new RegExp(`${time}.\\d\\d\\d -->.+line.+(\\n.+)+`)
+        let patt2 = new RegExp(`${time}.\\d\\d\\d --> \\d+:\\d\\d:\\d\\d.\\d.+(\\n.+)+`)
 
         let dialogue = result.join("\n\n").match(patt2)
 
         if (dialogue) body = body.replace(
             patt1,
             `$1\n${dialogue[0]
-                .replace(/\d+:\d\d:\d\d.\d\d\d -->.+line.+\n/, "")
+                .replace(/\d+:\d\d:\d\d.\d\d\d --> \d+:\d\d:\d\d.\d.+\n/, "")
                 .replace(/\n/, " ")}`
         )
     }
