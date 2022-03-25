@@ -7,15 +7,6 @@ HOST-SUFFIX,qhimg.com,DIRECT
 HOST-SUFFIX,acfun.cn,DIRECT
 HOST-SUFFIX,aixifan.com,DIRECT
 
-# > bilibili
-HOST-SUFFIX,biliapi.net,DIRECT
-HOST-SUFFIX,bilibili.com,DIRECT
-HOST-SUFFIX,bilivideo.com,DIRECT
-HOST-SUFFIX,hdslb.com,DIRECT
-HOST-SUFFIX,acgvideo.com,DIRECT
-HOST-SUFFIX,biliapi.com,DIRECT
-HOST-SUFFIX,bilibili.tv,DIRECT
-
 # > Tencent Video
 HOST-SUFFIX,video.qq.com,DIRECT
 HOST-SUFFIX,i.qq.com,DIRECT
@@ -398,7 +389,7 @@ HOST-SUFFIX,zhimg.com,DIRECT
 HOST-SUFFIX,zhuihd.com,DIRECT
 HOST-SUFFIX,latev8.com,DIRECT
 
-#movie
+# movie
 HOST-SUFFIX,dxzj88.com,DIRECT
 HOST-SUFFIX,yk.yunkai666.com,DIRECT
 HOST-SUFFIX,meilan.yunkaiys.com,DIRECT
