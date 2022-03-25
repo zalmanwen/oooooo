@@ -99,4 +99,4 @@ https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-bo
 # 百度防跳转
 ^https\:\/\/boxer\.baidu\.com\/scheme\?scheme url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/baidu-no-redirect.js
 
-hostname =  *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, app.biliintl.com, app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, afd.baidu.com, boxer.baidu.com, pan.baidu.com, *.baidu.com
+hostname =  *.mb3admin.com, *.emby.wtf, *.plusmedia.site, *.jmsooo.com, emby.misakaf.xyz, embyclub.org, azsgp.embyclub.nl, play.charontv.com, ap?.bilibili.com, ap?.biliapi.net, app.biliintl.com, app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, afd.baidu.com, boxer.baidu.com, pan.baidu.com, *.baidu.com
