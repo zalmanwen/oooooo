@@ -192,11 +192,6 @@ HOST-SUFFIX,p-cdn.us,PROXY
 HOST-SUFFIX,sndcdn.com,PROXY
 HOST-SUFFIX,soundcloud.com,PROXY
 
-# > TIDAL
-USER-AGENT,TIDAL*,PROXY
-HOST-SUFFIX,tidal.com,PROXY
-
-# (Podcast)
 # > Himalaya
 USER-AGENT,Himalaya*,PROXY
 HOST-SUFFIX,himalaya.com,PROXY
@@ -281,43 +276,6 @@ USER-AGENT,encoreTVB*,PROXY
 HOST-SUFFIX,encoretvb.com,PROXY
 HOST-SUFFIX,edge.api.brightcove.com,PROXY
 HOST-SUFFIX,bcbolt446c5271-a.akamaihd.net,PROXY
-
-# > HBO NOW & Max
-USER-AGENT,HBO%20NOW*,PROXY
-HOST-SUFFIX,hbo.com,PROXY
-HOST-SUFFIX,hbogo.com,PROXY
-HOST-SUFFIX,hbonow.com,PROXY
-USER-AGENT,HBOMAX*,PROXY
-HOST-SUFFIX,hbomax.com,PROXY
-HOST-SUFFIX,hbomaxcdn.com,PROXY
-
-# > HBO Asia
-USER-AGENT,HBO%20GO%20PROD*,PROXY
-HOST-SUFFIX,hbogoasia.com,PROXY
-HOST-SUFFIX,hbogoasia.hk,PROXY
-HOST-SUFFIX,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,PROXY
-HOST-SUFFIX,bcbolthboa-a.akamaihd.net,PROXY
-HOST-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net,PROXY
-HOST-SUFFIX,dai3fd1oh325y.cloudfront.net,PROXY
-HOST-SUFFIX,hboasia1-i.akamaihd.net,PROXY
-HOST-SUFFIX,hboasia2-i.akamaihd.net,PROXY
-HOST-SUFFIX,hboasia3-i.akamaihd.net,PROXY
-HOST-SUFFIX,hboasia4-i.akamaihd.net,PROXY
-HOST-SUFFIX,hboasia5-i.akamaihd.net,PROXY
-HOST-SUFFIX,hboasialive.akamaized.net,PROXY
-HOST-SUFFIX,hbogoprod-vod.akamaized.net,PROXY
-HOST-SUFFIX,hbolb.onwardsmg.com,PROXY
-HOST-SUFFIX,hbounify-prod.evergent.com,PROXY
-HOST-SUFFIX,players.brightcove.net,PROXY
-HOST-SUFFIX,s3-ap-southeast-1.amazonaws.com,PROXY
-
-# > Hulu
-HOST-SUFFIX,hulu.com,PROXY
-HOST-SUFFIX,huluim.com,PROXY
-HOST-SUFFIX,hulustream.com,PROXY
-HOST-SUFFIX,happyon.jp,PROXY
-HOST-SUFFIX,hjholdings.jp,PROXY
-HOST-SUFFIX,hulu.jp,PROXY
 
 # > ITV
 USER-AGENT,ITV_Player*,PROXY
