@@ -1,8 +1,16 @@
 
 # Siri Suggestions
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/bag\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/search\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
-^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri_Suggestions.js
+
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/bag\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.request.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/bag\?(.*) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.response.js
+
+# Spotlight & Look Up Search (iOS/macOS)
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/search\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.request.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/search\?(.*) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.response.js
+
+# Siri Infomation Card (macOS)
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.request.js
+^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.response.js
 
 # Apple TV 
 ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/configurations\?.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
@@ -30,4 +38,4 @@
 ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.js
 ^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.Map.js
 
-hostname = -cdn*.smoot.apple.com, -fbs.smoot.apple.com, *.smoot.apple.com, *.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, gspe1-ssl.ls.apple.com, weather-data.apple.com, weather-map.apple.com
+hostname = api*.smoot.apple.com, api*.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, gspe1-ssl.ls.apple.com, weather-data.apple.com, weather-map.apple.com
