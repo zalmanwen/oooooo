@@ -23,5 +23,11 @@
 # Geo Services
 ^https?:\/\/gspe\d*-ssl\.ls\.apple\.com(/pep/gcc) url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Geo_Services.js
 
+# Apple Weather
 
-hostname = -cdn*.smoot.apple.com, -fbs.smoot.apple.com, *.smoot.apple.com, *.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, gspe1-ssl.ls.apple.com
+^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url request-header If-None-Match:.+\r\n request-header \r\n
+^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/availability\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.Availability.js
+^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.js
+^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.Map.js
+
+hostname = -cdn*.smoot.apple.com, -fbs.smoot.apple.com, *.smoot.apple.com, *.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com, gspe1-ssl.ls.apple.com, weather-data.apple.com, weather-map.apple.com
