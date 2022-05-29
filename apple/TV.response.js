@@ -1,7 +1,7 @@
 /*
 README:https://github.com/VirgilClyne/iRingo
 */
-const $ = new Env("Apple Siri v2.0.3-response");
+const $ = new Env("Apple TV v2.0.3-response");
 const URL = new URLs();
 const DataBase = {
 	"Location":{
@@ -13,94 +13,42 @@ const DataBase = {
 	},
 	"Siri":{
 		"Settings":{"Switch":true,"CountryCode":"SG","Domains":["web","itunes","app_store","movies","restaurants","maps"],"Functions":["flightutilities","lookup","mail","messages","news","safari","siri","spotlight","visualintelligence"],"Safari_Smart_History":true}
+	},
+	"TV":{
+		"Settings":{"Switch":true,"Third-Party":true,"Configs":{"CountryCode":"AUTO","Tabs":["WatchNow","Originals","Movies","TV","Sports","Kids","Library","Search"]},"View":{"CountryCode":["SG","TW"]},"WatchNow":{"CountryCode":"AUTO"},"Channels":{"CountryCode":"AUTO"},"Originals":{"CountryCode":"TW"},"Movies":{"CountryCode":"AUTO"},"TV":{"CountryCode":"AUTO"},"Sports":{"CountryCode":"US"},"Kids":{"CountryCode":"US"},"Persons":{"CountryCode":"SG"},"Search":{"CountryCode":"TW"},"Others":{"CountryCode":"AUTO"}},
+		"Configs":{
+			"Storefront":{"AF":"143610","AL":"143575","AO":"143564","AI":"143538","AG":"143540","AR":"143505","AM":"143524","AU":"143460","AT":"143445","AZ":"143568","BA":"143612","BS":"143539","BH":"143559","BB":"143541","BD":"143490","BY":"143565","BE":"143446","BZ":"143555","BJ":"143576","BM":"143542","BT":"143577","BO":"143556","BW":"143525","BR":"143503","VG":"143543","BN":"143560","BG":"143526","BF":"143578","CA":"143455","CI":"143527","CM":"143574","CV":"143580","KY":"143544","TD":"143581","CL":"143483","CN":"143465","CO":"143501","CG":"143582","CR":"143495","HR":"143494","CY":"143557","CZ":"143489","DK":"143458","DM":"143545","DO":"143508","DZ":"143563","EC":"143509","EG":"143516","SV":"143506","EE":"143518","FJ":"143583","FI":"143447","FR":"143442","GM":"143584","DE":"143443","GH":"143573","GR":"143448","GD":"143546","GT":"143504","GW":"143585","GY":"143553","HN":"143510","HK":"143463","HU":"143482","IS":"143558","IN":"143467","ID":"143476","IE":"143449","IL":"143491","IT":"143450","JM":"143511","JP":"143462","JO":"143528","KH":"143579","KR":"143466","KZ":"143517","KE":"143529","KW":"143493","KG":"143586","LA":"143587","LV":"143519","LB":"143497","LR":"143588","LT":"143520","LI":"143522","LU":"143451","MO":"143515","MK":"143530","MG":"143531","MW":"143589","MY":"143473","MV":"143488","ML":"143532","MT":"143521","MR":"143590","MU":"143533","MX":"143468","FM":"143591","MD":"143523","MN":"143592","MS":"143547","MZ":"143593","NA":"143594","NP":"143484","NL":"143452","NZ":"143461","NI":"143512","NE":"143534","NG":"143561","NO":"143457","OM":"143562","PK":"143477","PW":"143595","PA":"143485","PG":"143597","PY":"143513","PE":"143507","PH":"143474","PL":"143478","PT":"143453","QA":"143498","RO":"143487","RU":"143469","ST":"143598","SA":"143479","SN":"143535","SC":"143599","SL":"143600","SG":"143464","SK":"143496","SI":"143499","SB":"143601","ZA":"143472","KP":"143466","ES":"143454","LK":"143486","KN":"143548","LC":"143549","VC":"143550","SR":"143554","SZ":"143602","SE":"143456","CH":"143459","TW":"143470","TJ":"143603","TZ":"143572","TH":"143475","TT":"143551","TN":"143536","TR":"143480","TM":"143604","TC":"143552","AE":"143481","UG":"143537","UA":"143492","GB":"143444","US":"143441","UY":"143514","UZ":"143566","VE":"143502","VN":"143471","YE":"143571","ZW":"143605","CD":"143613","GA":"143614","GF":"143615","IQ":"143617","XK":"143624","LY":"143567","ME":"143619","MA":"143620","MM":"143570","NR":"143606","RW":"143621","RS":"143500","TO":"143608","VU":"143609","ZM":"143622"},
+			"Locale":{"AU":"en-AU","CA":"en-CA","GB":"en-GB","KR":"ko-KR","HK":"yue-Hant","JP":"ja-JP","MO":"zh-Hant","TW":"zh-Hant","US":"en-US","SG":"zh-Hans"},
+			"Tabs":{"zh":{"WatchNow":"立即观看","Originals":"原创内容","Movies":"电影","TV":"电视节目","Store":"商店","Sports":"体育节目","Kids":"儿童","Library":"资料库","Search":"搜索"},"zh-Hans":{"WatchNow":"立即观看","Originals":"原创内容","Movies":"电影","TV":"电视节目","Store":"商店","Sports":"体育节目","Kids":"儿童","Library":"资料库","Search":"搜索"},"zh-Hant":{"WatchNow":"立即觀看","Originals":"原創內容","Movies":"電影","TV":"電視節目","Store":"商店","Sports":"體育節目","Kids":"兒童","Library":"資料庫","Search":"蒐索"},"en":{"WatchNow":"Watch Now","Originals":"Originals","Movies":"Movies","TV":"TV Shows","Store":"Store","Sports":"Sports","Kids":"Kids","Library":"Library","Search":"Search"}}
+		}
 	}
 };
 
-/***************** Processing *****************/
+/***************** Async *****************/
 !(async () => {
-	const { Settings, Caches } = await setENV("iRingo", "Siri", DataBase);
+	const { Settings, Caches, Configs } = await setENV("iRingo", "TV", DataBase);
 	if (Settings.Switch) {
 		let url = URL.parse($request.url);
-		let data = JSON.parse($response.body);
 		$.log(url.path);
 		switch (url.path) {
-			case "bag":
-				data.enabled = true;
-				data.feedback_enabled = true;
-				//data.search_url = data?.search_url || "https:\/\/api-glb-apne1c.smoot.apple.com\/search";
-				//data.feedback_url = data?.feedback_url || "https:\/\/fbs.smoot.apple.com\/fb";
-				data.enabled_domains = Array.from(new Set([...data?.enabled_domains ?? [], ...Settings.Domains]));
-				data.min_query_len = 3;
-				$.log(`🎉 ${$.name}, 领域列表`, `enabled_domains: ${JSON.stringify(data.enabled_domains)}`, "");
-				let Functions = data?.overrides;
-				if (Functions) {
-					Settings.Functions.forEach(app => {
-						let APP = Functions?.[`${app}`];
-						if (APP) {
-							APP.enabled = true;
-							APP.feedback_enabled = true;
-							//APP.min_query_len = 2;
-							//APP.search_render_timeout = 200;
-							//APP.first_use_description = "";
-							//APP.first_use_learn_more = "";
-						} else APP = { enabled: true, feedback_enabled: true };
-					});
-					let FlightUtilities = Functions?.flightutilities;
-					if (FlightUtilities) {
-						//FlightUtilities.fallback_flight_url = "https:\/\/api-glb-aps1b.smoot.apple.com\/flight";
-						//FlightUtilities.flight_url = "https:\/\/api-glb-apse1c.smoot.apple.com\/flight";
-					};
-					let Lookup = Functions?.lookup;
-					if (Lookup) {
-						Lookup.min_query_len = 2;
-					};
-					let Mail = Functions?.mail;
-					let Messages = Functions?.messages;
-					let News = Functions?.news;
-					let Safari = Functions?.safari;
-					if (Safari) {
-						Safari.experiments_custom_feedback_enabled = true;
-					};
-					let Spotlight = Functions?.spotlight;
-					if (Spotlight) {
-						Spotlight.use_twolayer_ranking = true;
-						Spotlight.experiments_custom_feedback_enabled = true;
-						Spotlight.min_query_len = 2;
-						Spotlight.collect_scores = true;
-						Spotlight.collect_anonymous_metadata = true;
-					};
-					let VisualIntelligence = Functions?.visualintelligence;
-					if (VisualIntelligence) {
-						//VisualIntelligence.enabled_domains = ["pets","media","books","art","nature","landmarks"];
-						//VisualIntelligence.supported_domains = ["ART","BOOK","CATS","DOGS","NATURE","MEDIA","LANDMARK","OBJECT_2D","ALBUM"],
-					};
+			case "uts/v3/configurations":
+				if (url.params.caller !== "wta") { // 不修改caller=wta的configurations数据
+					const locale = $request?.headers?.["X-Apple-I-Locale"]?.split('_')?.[0] ?? "zh"
+					$.log(`locale: ${locale}`, "");
+					let { tabs, tabsSplitScreen } = await createTabsGroup(url.params, locale, Configs);
+					const AllTabs = ["WatchNow", "Originals", "Movies", "TV", "Sports", "Kids", "Library", "Search"];
+					AllTabs.forEach(tab => {
+						if (!Settings.Configs.Tabs.includes(tab)) {
+							delete tabs[tab]
+							delete tabsSplitScreen[tab]
+						}
+					})
+					$response.body = await outputConfigs(url.params, $response.body, tabs, tabsSplitScreen);
 				}
-				// Safari Smart History
-				data.safari_smart_history_enabled = (Settings.Safari_Smart_History) ? true : false;
-				data.smart_history_feature_feedback_enabled = (Settings.Safari_Smart_History) ? true : false;
-				/*
-				if (data?.mescal_enabled) {
-					data.mescal_enabled = true;
-					data.mescal_version = 200;
-					data.mescal_cert_url = "https://init.itunes.apple.com/WebObjects/MZInit.woa/wa/signSapSetupCert";
-					data.mescal_setup_url = "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/signSapSetup";
-				}
-				let smart_search_v2 = data?.smart_search_v2_parameters;
-				if (smart_search_v2) {
-					smart_search_v2.smart_history_score_v2_enabled = true;
-					smart_search_v2.smart_history_score_v2_enable_count = true;
-				};
-				data.session_experiment_metadata_enabled = true;
-				//data.sample_features = true;
-				//data.use_ledbelly = true;
-				*/
 				break;
-			case "search":
-				break;
-			case "card":
+			default:
 				break;
 		}
-		$response.body = JSON.stringify(data);
 	}
 })()
 	.catch((e) => $.logErr(e))
@@ -109,7 +57,7 @@ const DataBase = {
 		else $.done($response)
 	})
 
-/***************** Function *****************/
+/***************** Async Function *****************/
 /**
  * Get Environment Variables
  * @author VirgilClyne
@@ -120,24 +68,90 @@ const DataBase = {
  */
 async function getENV(t,e,n){let i=$.getjson(t,n),s=i?.[e]?.Settings||n?.[e]?.Settings||n?.Default?.Settings,g=i?.[e]?.Configs||n?.[e]?.Configs||n?.Default?.Configs,f=i?.[e]?.Caches||void 0;if("string"==typeof f&&(f=JSON.parse(f)),"undefined"!=typeof $argument){if($argument){let t=Object.fromEntries($argument.split("&").map((t=>t.split("=")))),e={};for(var a in t)o(e,a,t[a]);Object.assign(s,e)}function o(t,e,n){e.split(".").reduce(((t,i,s)=>t[i]=e.split(".").length===++s?n:t[i]||{}),t)}}return{Settings:s,Caches:f,Configs:g}}
 
-/**
- * Set Environment Variables
- * @author VirgilClyne
- * @param {String} name - Persistent Store Key
- * @param {String} platform - Platform Name
- * @param {Object} database - Default DataBase
- * @return {Promise<*>}
- */
+ /**
+  * Set Environment Variables
+  * @author VirgilClyne
+  * @param {String} name - Persistent Store Key
+  * @param {String} platform - Platform Name
+  * @param {Object} database - Default DataBase
+  * @return {Promise<*>}
+  */
 async function setENV(name, platform, database) {
 	$.log(`⚠ ${$.name}, Set Environment Variables`, "");
-	let { Settings, Caches = {} } = await getENV(name, platform, database);
+	let { Settings, Caches = {}, Configs } = await getENV(name, platform, database);
 	/***************** Prase *****************/
 	Settings.Switch = JSON.parse(Settings.Switch) // BoxJs字符串转Boolean
-	if (typeof Settings?.Domains == "string") Settings.Domains = Settings.Domains.split(",") // BoxJs字符串转数组
-	if (typeof Settings?.Functions == "string") Settings.Functions = Settings.Functions.split(",") // BoxJs字符串转数组
-	if (Settings?.Safari_Smart_History) Settings.Safari_Smart_History = JSON.parse(Settings.Safari_Smart_History) // BoxJs字符串转Boolean
+	Settings["Third-Party"] = JSON.parse(Settings["Third-Party"]) // BoxJs字符串转Boolean
+	if (typeof Settings?.Configs?.Tabs == "string") Settings.Configs.Tabs = Settings.Configs.Tabs.split(",") // BoxJs字符串转数组
 	$.log(`🎉 ${$.name}, Set Environment Variables`, `Settings: ${typeof Settings}`, `Settings内容: ${JSON.stringify(Settings)}`, "");
-	return { Settings, Caches }
+	return { Settings, Caches, Configs }
+};
+
+// Create Tabs Group
+async function createTabsGroup(Params, locale, database) {
+	$.log(`⚠ ${$.name}, Create Tabs Group`, "");
+
+	//构建Tab内容
+	const WatchNow = { "destinationType": "Target", "target": { "id": "tahoma_watchnow", "type": "Root", "url": "https://tv.apple.com/watch-now" }, "title": database.Tabs[locale].WatchNow, "type": "WatchNow", "universalLinks": ["https://tv.apple.com/watch-now"] };
+	const Originals = { "destinationType": "Target", "target": { "id": "tvs.sbd.4000", "type": "Brand", "url": "https://tv.apple.com/us/channel/tvs.sbd.4000" }, "title": database.Tabs[locale].Originals, "type": "Originals", "universalLinks": ["https://tv.apple.com/channel/tvs.sbd.4000", "https://tv.apple.com/atv"] };
+	const Movies = { "universalLinks": ["https://tv.apple.com/movies"], "title": database.Tabs[locale].Movies, "destinationType": "Target", "secondaryEnabled": true, "target": { "id": "tahoma_movies", "type": "Root", "url": "https://tv.apple.com/movies" }, "type": "Movies" };
+	const TV = { "universalLinks": ["https://tv.apple.com/tv-shows"], "title": database.Tabs[locale].TV, "destinationType": "Target", "secondaryEnabled": true, "target": { "id": "tahoma_tvshows", "type": "Root", "url": "https://tv.apple.com/tv-shows" }, "type": "TV" };
+	const Store = {
+		"destinationType": "SubTabs",
+		"subTabs": [
+			{ "destinationType": "Target", "target": { "id": "tahoma_movies", "type": "Root", "url": "https://tv.apple.com/movies" }, "title": database.Tabs[locale].Movies, "type": "Movies", "universalLinks": ["https://tv.apple.com/movies"] },
+			{ "destinationType": "Target", "target": { "id": "tahoma_tvshows", "type": "Root", "url": "https://tv.apple.com/tv-shows" }, "title": database.Tabs[locale].TV, "type": "TV", "universalLinks": ["https://tv.apple.com/tv-shows"] }
+		],
+		"title": database.Tabs[locale].Store,
+		"type": "Store",
+		"universalLinks": ["https://tv.apple.com/store"]
+	};
+	const Sports = { "destinationType": "Target", "target": { "id": "tahoma_sports", "type": "Root", "url": "https://tv.apple.com/sports" }, "title": database.Tabs[locale].Sports, "secondaryEnabled": true, "type": "Sports", "universalLinks": ["https://tv.apple.com/sports"] };
+	const Kids = { "destinationType": "Target", "target": { "id": "tahoma_kids", "type": "Root", "url": "https://tv.apple.com/kids" }, "title": database.Tabs[locale].Kids, "secondaryEnabled": true, "type": "Kids", "universalLinks": ["https://tv.apple.com/kids"] };
+	const Library = { "destinationType": "Client", "title": database.Tabs[locale].Library, "type": "Library" };
+	const Search = { "destinationType": "Target", "target": { "id": "tahoma_searchlanding", "type": "Root", "url": "https://tv.apple.com/search" }, "title": database.Tabs[locale].Search, "type": "Search", "universalLinks": ["https://tv.apple.com/search"] };
+
+	// 创建分组
+	var tabs = (Params.v > 53) ? [WatchNow, Originals, Store, Sports, Kids, Library, Search]
+		: [WatchNow, Originals, Movies, TV, Sports, Kids, Library, Search];
+	var tabsSplitScreen =  [WatchNow, Originals, Store, Library, Search];
+	// 输出
+	return { tabs, tabsSplitScreen }
+};
+
+// Output Configurations
+async function outputConfigs(Params, body, tabs, tabsSplitScreen) {
+	$.log(`⚠ ${$.name}, Create Configurations`, "");
+	// Input Data
+	let configurations = JSON.parse(body);
+	// 注入数据
+	//条件运算符 & 可选链操作符 
+	//configurations.data.applicationProps.requiredParamsMap.WithoutUtsk.locale = "zh_Hans";
+	//configurations.data.applicationProps.requiredParamsMap.Default.locale = "zh_Hans";
+	configurations.data.applicationProps.tabs = tabs;
+	//configurations.data.applicationProps.tabs = createTabsGroup("Tabs", caller, platform, locale, region);
+	if (Params.v > 53) configurations.data.applicationProps.tabsSplitScreen = tabsSplitScreen;
+	//configurations.data.applicationProps.tabsSplitScreen = createTabsGroup("TabsGroup", caller, platform, locale, region);
+	configurations.data.applicationProps.tvAppEnabledInStorefront = true;
+	configurations.data.applicationProps.enabledClientFeatures = (Params.v > 53) ? [{ "domain": "tvapp", "name": "snwpcr" }, { "domain": "tvapp", "name": "store_tab" }]
+		: [{ "domain": "tvapp", "name": "expanse" }, { "domain": "tvapp", "name": "syndication" }, { "domain": "tvapp", "name": "snwpcr" }];
+	//configurations.data.applicationProps.storefront.localesSupported = ["zh_Hans", "zh_Hant", "yue-Hant", "en_US", "en_GB"];
+	//configurations.data.applicationProps.storefront.storefrontId = 143470;
+	configurations.data.applicationProps.featureEnablers = {
+		"topShelf": true,
+		"unw": true,
+		//"imageBasedSubtitles": true,
+		"ageVerification": false,
+		"seasonTitles": false
+	};
+	//configurations.data.userProps.activeUser = true;
+	//configurations.data.userProps.utsc = "1:18943";
+	//configurations.data.userProps.country = country;
+	//configurations.data.userProps.gac = true;
+	// Output Data
+	$.log(`🎉 ${$.name}, ${outputConfigs.name}完成`, "");
+	body = JSON.stringify(configurations);
+	return body
 };
 
 /***************** Env *****************/
