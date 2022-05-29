@@ -1,8 +1,11 @@
 # Location Services
-^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc url script-echo-response https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Location.js
+^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults(\?.*)?$ url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Location.request.js
+^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults(\?.*)?$ url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Location.response.js
+^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Location.response.js
 
 # Apple Weather
 ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url request-header If-None-Match:.+\r\n request-header \r\n
+
 ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/availability\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.Availability.js
 ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.js
 ^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Weather.Map.js
@@ -16,20 +19,11 @@
 ^https?:\/\/api.*\.smoot\.apple\.(com|cn)\/card\?(.*) url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Siri.response.js
 
 # Apple TV 
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/configurations\?.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/canvases\/Roots\/(watchNow|tahoma_watchnow|movies|tv|sports|kids)\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/(movies|shows|sports|sporting-events).* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/shelves\/uts.col.UpNext.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/brands\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/playables.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/favorites\?.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/watchlist.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/favorites\/(add|remove).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.js
-# ^https?:\/\/uts-api\.itunes\.apple\.com(\/uts\/)(v1|v2|v3)\/view\/product\/.* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_TV.jss
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/TV.request.js
+^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* url script-response-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/TV.response.js
 
 # Apple News
 ^https?:\/\/news-(edge|events)\.apple\.com(\/v1\/configs|\/analyticseventsv2\/async).* url script-request-body https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_News.js
 ^https?:\/\/news-(client-search)\.apple\.com\/(v1\/search\?).* url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/apple/Apple_News.js
 
-hostname = weather-data.apple.com, weather-map.apple.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com
-
+hostname = configuration.ls.apple.com, gspe1-ssl.ls.apple.com, weather-data.apple.com, weather-map.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, uts-api.itunes.apple.com, news-client.apple.com, news-client-search.apple.com, news-edge.apple.com, news-events.apple.com, newsletter-edge.apple.com
