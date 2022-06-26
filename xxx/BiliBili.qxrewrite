@@ -78,5 +78,3 @@
 ^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)& url script-request-header https://raw.githubusercontent.com/zalmanwen/oooooo/master/ccc/Bili_Auto_Regions.js
 
 hostname = app.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, grpc.biliapi.net, api.biliapi.net, ap?.bili*i.com, ap?.bili*i.net
-
-33
