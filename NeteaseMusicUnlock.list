@@ -1,17 +1,7 @@
 # > 网易云音乐解锁
 
-shadowsocks=MUSIC.DESPERADOJ.COM:30001, method=aes-128-gcm, password=desperadoj.com_free_proxy_d39m, fast-open=false, udp-relay=false, tag=网易云音乐 1
-shadowsocks=MUSIC.DESPERADOJ.COM:30003, method=aes-128-gcm, password=desperadoj.com_free_proxy_d39m, fast-open=false, udp-relay=false, tag=网易云音乐 2
-http=music.lolico.me:39000, fast-open=false, udp-relay=false, tag=网易云音乐 3
-http=101.132.79.113:23333, fast-open=false, udp-relay=false, tag=网易云音乐 4
-http=MUSIC.GRIOUGES.CN:39000, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 5
-http=1.116.214.16:19980, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 6
-http=SALVAN.ICU:19980, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 7
-http=127.0.0.1:443, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 8
-http=LOLICO.ME:443, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 9
-http=SALVAN.ICU:19980, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 10
-http=106.52.127.72:19951, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 11
-http=101.132.79.113:23333, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 12
-http=MUSIC.LOLICO.ME:39000, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 13
-http=MUSIC.GRIOUGES.CN:39000, over-tls=false, fast-open=false, udp-relay=false, tag=网易云音乐 14
+http=music.lolico.me:39000, over-tls=false, fast-open=false, udp-relay=false, server_check_url=http://interface3.music.163.com, tag=网易云音乐 1
+shadowsocks=music.desperadoj.com:30003, method=aes-128-gcm, password=desperadoj.com_free_proxy_d39m, fast-open=false, udp-relay=false, server_check_url=http://interface3.music.163.com, tag=网易云音乐 2
+http=music.griouges.cn:39000, over-tls=false, fast-open=false, udp-relay=false, server_check_url=http://interface3.music.163.com, tag=网易云音乐 3
+http=119.176.253.89:9080, over-tls=false, fast-open=false, udp-relay=false,  server_check_url=http://interface3.music.163.com, tag=网易云音乐 4
 
